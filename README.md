@@ -2,6 +2,9 @@
 
 This project implements a sleek and responsive authentication system, featuring a login and registration page designed with Next.js 14 and styled using Tailwind CSS.
 
+![Blank 2 Grids Collage (1)](https://github.com/Fonyuygita/Nextjs-and-Typescript-auth-design/assets/89413571/371a21fe-bd71-4786-a5e6-b804ca54969f)
+
+
 ## Technologies Used
 
 - **Next.js 14**: The React framework for production, providing server-side rendering and generating static websites for React-based web applications.
