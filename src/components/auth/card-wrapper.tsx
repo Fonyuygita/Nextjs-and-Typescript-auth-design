@@ -20,7 +20,7 @@ export const CardWrapper = ({ children, headerLabel, backButtonLabel, backButton
 
         <Card className="w-[400px] shadow-md">
             <CardHeader>
-                <Header label="Welcome back" />
+                <Header label={headerLabel} />
             </CardHeader>
             <CardContent>
                 {children}
