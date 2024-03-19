@@ -2,35 +2,35 @@
 import { useRouter } from "next/navigation";
 
 interface LoginButtonProps {
-    children:React.ReactNode;
+    children: React.ReactNode;
     mode?: "modal" | "redirect";
     asChild?: boolean;
 
 }
 
-export const LoginButton=({
+export const LoginButton = ({
     children,
-    mode="redirect",
+    mode = "redirect",
     asChild
-}:LoginButtonProps)=>{
+}: LoginButtonProps) => {
 
-const router=useRouter()
+    const router = useRouter()
 
-const handleClick=()=>{
-    console.log("Login button clicked")
-    router.push("/auth/login")
-}
+    const handleClick = () => {
+        console.log("Login button clicked")
+        router.push("/auth/login")
+    }
 
-if(mode=="modal"){
-return(
-    <span>TODO LIST EXPRESSED</span>
-)
-}
+    if (mode == "modal") {
+        return (
+            <span>TODO LIST EXPRESSED</span>
+        )
+    }
 
-return(
-    <span onClick={handleClick} className="cursor-pointer">
-        {children}
-    </span>
-)
+    return (
+        <span onClick={handleClick} className="cursor-pointer">
+            {children}
+        </span>
+    )
 
 }
