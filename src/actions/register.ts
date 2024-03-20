@@ -1,8 +1,9 @@
 "use server"
-import bcrypt from "bcrypt"
+import bcrypt from "bcryptjs"
 import { RegisterSchema } from "@/schemas";
 import { z } from "zod";
 import { db } from "@/lib/db";
+import { findUserByEmail } from "@/data/user";
 
 //  VALIDATING OUR REGISTER FORM ON THE SERVER SIDE
 export const register = async(values:z.infer<typeof RegisterSchema>)=>{
@@ -17,11 +18,7 @@ const {email, password, name}=validateFields.data
 // hash our password
 const hashedPassword=await bcrypt.hash(password, 10);
 // check if user already exist
-const existingUser=await db.user.findUnique({
-    where:{
-        email
-    }
-})
+const existingUser=await findUserByEmail(email)
 
 if(existingUser) {
     return {error:"User already exist "}
